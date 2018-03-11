@@ -4,6 +4,11 @@ let moves = "";
 
 let turns = ['1','2','3','4','5','6','7','8','9']
 
+function reply_click()
+{
+    let whatWasClicked = event.srcElement.id;
+}
+
 const winCheck = function(){
   if (turns.length % 2 === 0){
     moves = xMoves;
@@ -60,16 +65,16 @@ const playerTurn = function(){
 $(document).ready(function() {
   console.log(`document ready`)
 
-  $('#one').on('click', function(){
+  $('#1').on('click', function(){
     $(this).prop('disabled', true);
 
 
     if(turns.length % 2 === 0 ){
-      $('#one').addClass('x');
+      $('#1').addClass('x');
       xMoves = xMoves + "1";
     }
     else{
-      $('#one').addClass('o');
+      $('#1').addClass('o');
       oMoves = oMoves + "1"
     }
     winCheck();
@@ -79,15 +84,15 @@ $(document).ready(function() {
   })
 
 
-  $('#two').on('click', function(){
+  $('#2').on('click', function(){
     $(this).prop('disabled', true);
 
     if(turns.length % 2 === 0 ){
-      $('#two').addClass('x');
+      $('#2').addClass('x');
       xMoves = xMoves + "2";
     }
     else{
-      $('#two').addClass('o');
+      $('#2').addClass('o');
       oMoves = oMoves + "2"
     }
     winCheck();
@@ -97,15 +102,15 @@ $(document).ready(function() {
   })
 
 
-  $('#three').on('click', function(){
+  $('#3').on('click', function(){
     $(this).prop('disabled', true);
 
     if(turns.length % 2 === 0 ){
-      $('#three').addClass('x');
+      $('#3').addClass('x');
       xMoves = xMoves + "3";
     }
     else{
-      $('#three').addClass('o');
+      $('#3').addClass('o');
       oMoves = oMoves + "3"
     }
     winCheck();
@@ -114,15 +119,15 @@ $(document).ready(function() {
 
   })
 
-  $('#four').on('click', function(){
+  $('#4').on('click', function(){
     $(this).prop('disabled', true);
 
     if(turns.length % 2 === 0 ){
-      $('#four').addClass('x');
+      $('#4').addClass('x');
       xMoves = xMoves + "4";
     }
     else{
-      $('#four').addClass('o');
+      $('#4').addClass('o');
       oMoves = oMoves + "4"
     }
     winCheck();
@@ -132,15 +137,15 @@ $(document).ready(function() {
   })
 
 
-  $('#five').on('click', function(){
+  $('#5').on('click', function(){
     $(this).prop('disabled', true);
 
     if(turns.length % 2 === 0 ){
-      $('#five').addClass('x');
+      $('#5').addClass('x');
       xMoves = xMoves + "5";
     }
     else{
-      $('#five').addClass('o');
+      $('#5').addClass('o');
       oMoves = oMoves + "5"
     }
     winCheck();
@@ -150,15 +155,15 @@ $(document).ready(function() {
   })
 
 
-  $('#six').on('click', function(){
+  $('#6').on('click', function(){
     $(this).prop('disabled', true);
 
     if(turns.length % 2 === 0 ){
-      $('#six').addClass('x');
+      $('#6').addClass('x');
       xMoves = xMoves + "6";
     }
     else{
-      $('#six').addClass('o');
+      $('#6').addClass('o');
       oMoves = oMoves + "6"
     }
     winCheck();
@@ -168,16 +173,16 @@ $(document).ready(function() {
   })
 
 
-  $('#seven').on('click', function(){
+  $('#7').on('click', function(){
     $(this).prop('disabled', true);
     moves = moves + "7";
 
     if(turns.length % 2 === 0 ){
-      $('#seven').addClass('x');
+      $('#7').addClass('x');
       xMoves = xMoves + "7";
     }
     else{
-      $('#seven').addClass('o');
+      $('#7').addClass('o');
       oMoves = oMoves + "7"
     }
     winCheck();
@@ -187,15 +192,15 @@ $(document).ready(function() {
   })
 
 
-  $('#eight').on('click', function(){
+  $('#8').on('click', function(){
     $(this).prop('disabled', true);
 
     if(turns.length % 2 === 0 ){
-      $('#eight').addClass('x');
+      $('#8').addClass('x');
       xMoves = xMoves + "8";
     }
     else{
-      $('#eight').addClass('o');
+      $('#8').addClass('o');
       oMoves = oMoves + "8"
     }
     winCheck();
@@ -204,15 +209,15 @@ $(document).ready(function() {
 
   })
 
-  $('#nine').on('click', function(){
+  $('#9').on('click', function(){
     $(this).prop('disabled', true);
 
     if(turns.length % 2 === 0 ){
-      $('#nine').addClass('x');
+      $('#9').addClass('x');
       xMoves = xMoves + "9";
     }
     else{
-      $('#nine').addClass('o');
+      $('#9').addClass('o');
       oMoves = oMoves + "9"
     }
     winCheck();
