@@ -1,87 +1,180 @@
+//Make the DIV element draggagle:
+dragElement(document.getElementById(("mydiv")));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+//End CSS manipulation
 
 
 let xMoves = "";
 let oMoves = "";
 let moves = "";
 let whatWasClicked ="";
-let turns = ['1','2','3','4','5','6','7','8','9']
+let turns = [1,2,3,4,5,6,7,8,9]
+let xscore = 0
+let oscore = 0
 
 
 function reply_click()
 {
     whatWasClicked = event.srcElement.id;
 };
+const playerTurn = function(){
+  if (turns[turns.length-1] % 2 === 0 ){
+    $('p').text("O's turn");
+    $('.oscore').text(oscore);
+  }
+  else{
+    $('p').text("X's turn");
+    $('.xscore').text(xscore);
+  }
+}
+const win = function(){
+  if(turns[turns.length-1] % 2 === 0){
+    oscore = oscore + 1
+  }
+  else{
+    xscore = xscore + 1
+  }
+}
+
+const refresh = function(){
+  xMoves = "";
+  oMoves = "";
+  moves = "";
+  whatWasClicked ="";
+  $('.buttons *').removeAttr("disabled")
+  $('.buttons *').removeClass("x")
+  $('.buttons *').removeClass("o")
+
+  if(turns[0] === 1){
+    turns = [2,3,4,5,6,7,8,9,10]
+  }
+  else{
+    turns = [1,2,3,4,5,6,7,8,9]
+  }
+};
 
 const turn = function(){
-  if (xMoves.indexOf(whatWasClicked)> -1 || oMoves.indexOf(whatWasClicked > -1)){
-  }
   let classWhatWasClicked = "#" + whatWasClicked;
-  console.log(typeof(classWhatWasClicked));
-  if(turns.length % 2 === 0 ){
-    $('classWhatWasClicked').addClass('x');
+  $(classWhatWasClicked).attr('disabled', true);
+  if(turns[turns.length-1] % 2 === 0 ){
+    $(classWhatWasClicked).addClass('x');
     xMoves = xMoves + whatWasClicked;
   }
   else{
-    $('classWhatWasClicked').addClass('o');
+    $(classWhatWasClicked).addClass('o');
     oMoves = oMoves + whatWasClicked
   }
 }
 const winCheck = function(){
-  if (turns.length % 2 === 0){
+  if (turns[turns.length-1] % 2 === 0){
     moves = xMoves;
   }
   else {
     moves = oMoves;
   }
   if(moves.indexOf('1') > -1 && moves.indexOf('2') > -1 && moves.indexOf('3') > -1){
-    console.log(`yesssss`);
+    win();
+    refresh();
   }
 
   if(moves.indexOf('4') > -1 && moves.indexOf('5') > -1 && moves.indexOf('6') > -1){
-    console.log(`yesssss`);
+    win();
+    refresh();
   }
 
 
   if(moves.indexOf('1') > -1 && moves.indexOf('4') > -1 && moves.indexOf('7') > -1){
-    console.log(`yesssss`);
+    win();
+    refresh();
   }
 
 
   if(moves.indexOf('2') > -1 && moves.indexOf('5') > -1 && moves.indexOf('8') > -1){
-    console.log(`yesssss`);
+    win();
+    refresh();
   }
 
 
   if(moves.indexOf('3') > -1 && moves.indexOf('6') > -1 && moves.indexOf('9') > -1){
-    console.log(`yesssss`);
+    win();
+    refresh();
   }
 
 
   if(moves.indexOf('1') > -1 && moves.indexOf('5') > -1 && moves.indexOf('9') > -1){
-    console.log(`yesssss`);
+    win();
+    refresh();
   }
 
 
   if(moves.indexOf('3') > -1 && moves.indexOf('5') > -1 && moves.indexOf('7') > -1){
-    console.log(`yesssss`);
+    win();
+    refresh();
   }
 
-  if(turns[0] != '1'){
-    drawMessage();
+  else if(turns.length === 1){
+    console.log(turns[0]);
+    refresh();
   }
   moves = "";
 
 }
 
-
-
 $(document).ready(function() {
-  console.log(`document ready`)
+  console.log(`document ready`);
+  playerTurn();
+  $('.xscore').text(xscore)
+  $('.oscore').text(oscore)
 
   $('.buttons').on('click', function(){
-    turn();
-    winCheck();
-    turns.pop();
-
+    if (whatWasClicked.length===0){
+    console.log(`heh`);
+    }
+    else{
+      playerTurn();
+      turn();
+      winCheck();
+      turns.pop();
+      playerTurn();
+      whatWasClicked = "";
+    }
   })
 })

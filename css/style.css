@@ -1,22 +1,41 @@
-body{
-  background-image: url("/Users/jonathancasson/Documents/WDI_Fundamentals/Projects/project0/img/background.jpg");
-  background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
-  -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
-  -moz-background-size: cover; /* optional for Firefox 3.6 */
-  -o-background-size: cover; /* for Opera 9.5 */
-  margin: 0; /* to remove the default white margin of body */
-  padding: 0; /* to remove the default white margin of body */
-  overflow: hidden;
+body {
+    background:url("/Users/jonathancasson/Documents/WDI_Fundamentals/Projects/project0/img/background-wallpaper-test.jpg") no-repeat fixed center;
+}
+#mydiv {
+    width: 40%;
+    height: 97%;
+    position: absolute;
+    z-index: 9;
+}
+#bg{
+  height:486px;
+}
+#mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+}
 }
 .buttons{
   margin-top: 30px;
   text-align: center;
   transform: rotate(-10deg);
 }
-
+.invisible{
+  color: : red;
+}
 .x{
   background-color: blue;
 }
 .o{
   background-color: red;
+}
+.board img{
+  transform: rotate(-10deg);
+  margin: auto;
+  padding-top: 138px;
+  padding-left: 682px;
+  position: fixed;
 }
