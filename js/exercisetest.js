@@ -41,7 +41,6 @@ function dragElement(elmnt) {
 }
 //End CSS manipulation
 
-
 let xMoves = "";
 let oMoves = "";
 let moves = "";
@@ -49,7 +48,6 @@ let whatWasClicked ="";
 let turns = [1,2,3,4,5,6,7,8,9]
 let xscore = 0
 let oscore = 0
-
 
 function reply_click()
 {
@@ -66,11 +64,18 @@ const playerTurn = function(){
   }
 }
 const win = function(){
+  $('.buttons *').attr('disabled', true);
   if(turns[turns.length-1] % 2 === 0){
-    oscore = oscore + 1
+    oscore = oscore + 1;
+    $('.x').addClass('oWins');
+    $('.oscore').text(oscore);
+    $('p').text("O WINS !!!");
   }
   else{
-    xscore = xscore + 1
+    xscore = xscore + 1;
+    $('.o').addClass('xWins');
+    $('.xscore').text(xscore);
+    $('p').text("X WINS !!!");
   }
 }
 
@@ -82,6 +87,8 @@ const refresh = function(){
   $('.buttons *').removeAttr("disabled")
   $('.buttons *').removeClass("x")
   $('.buttons *').removeClass("o")
+  $('.buttons *').removeClass("xWins")
+  $('.buttons *').removeClass("oWins")
 
   if(turns[0] === 1){
     turns = [2,3,4,5,6,7,8,9,10]
@@ -112,58 +119,59 @@ const winCheck = function(){
   }
   if(moves.indexOf('1') > -1 && moves.indexOf('2') > -1 && moves.indexOf('3') > -1){
     win();
-    refresh();
+
   }
 
-  if(moves.indexOf('4') > -1 && moves.indexOf('5') > -1 && moves.indexOf('6') > -1){
+  else if(moves.indexOf('4') > -1 && moves.indexOf('5') > -1 && moves.indexOf('6') > -1){
     win();
-    refresh();
-  }
 
-
-  if(moves.indexOf('1') > -1 && moves.indexOf('4') > -1 && moves.indexOf('7') > -1){
-    win();
-    refresh();
   }
 
 
-  if(moves.indexOf('2') > -1 && moves.indexOf('5') > -1 && moves.indexOf('8') > -1){
+  else if(moves.indexOf('1') > -1 && moves.indexOf('4') > -1 && moves.indexOf('7') > -1){
     win();
-    refresh();
+
   }
 
 
-  if(moves.indexOf('3') > -1 && moves.indexOf('6') > -1 && moves.indexOf('9') > -1){
+  else if(moves.indexOf('2') > -1 && moves.indexOf('5') > -1 && moves.indexOf('8') > -1){
     win();
-    refresh();
   }
 
 
-  if(moves.indexOf('1') > -1 && moves.indexOf('5') > -1 && moves.indexOf('9') > -1){
+  else if(moves.indexOf('3') > -1 && moves.indexOf('6') > -1 && moves.indexOf('9') > -1){
     win();
-    refresh();
   }
 
 
-  if(moves.indexOf('3') > -1 && moves.indexOf('5') > -1 && moves.indexOf('7') > -1){
+  else if(moves.indexOf('1') > -1 && moves.indexOf('5') > -1 && moves.indexOf('9') > -1){
     win();
-    refresh();
+  }
+
+
+  else if(moves.indexOf('3') > -1 && moves.indexOf('5') > -1 && moves.indexOf('7') > -1){
+    win();
   }
 
   else if(turns.length === 1){
-    console.log(turns[0]);
-    refresh();
+    $('.buttons *').attr('disabled', true);
+    $('p').text("It's a draw");
+
   }
+  else{
   moves = "";
-
+  }
 }
-
 $(document).ready(function() {
   console.log(`document ready`);
   playerTurn();
   $('.xscore').text(xscore)
   $('.oscore').text(oscore)
 
+  $('h3').on('click',function(){
+    playerTurn();
+    refresh();
+  })
   $('.buttons').on('click', function(){
     if (whatWasClicked.length===0){
     console.log(`heh`);
@@ -172,9 +180,15 @@ $(document).ready(function() {
       playerTurn();
       turn();
       winCheck();
+      if (moves.length > 0 && turns.length < 8){
+        console.log(`why?`)
+        turns.pop();
+        whatWasClicked = "";
+      }
+      else{
       turns.pop();
       playerTurn();
-      whatWasClicked = "";
+      }
     }
   })
 })
