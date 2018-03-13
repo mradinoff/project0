@@ -1,5 +1,5 @@
 body {
-    background:url("/Users/jonathancasson/Documents/WDI_Fundamentals/Projects/project0/img/background-wallpaper-test.jpg") no-repeat fixed center;
+    background:url("../img/background-wallpaper-test.jpg") no-repeat fixed center;
     background-size: cover;
 }
 #mydiv {
@@ -18,7 +18,7 @@ body {
     width:843px;
     cursor: move;
     z-index: 10;
-    background: url("/Users/jonathancasson/Documents/WDI_Fundamentals/Projects/project0/img/moveable div bg.jpg");
+    background: url("../img/moveable div bg.jpg");
     color: #fff;
 }
 p{
@@ -82,14 +82,14 @@ h3{
   text-decoration: underline;
 }
 .x{
-  background:url("/Users/jonathancasson/Documents/WDI_Fundamentals/Projects/project0/img/o.png");
+  background:url("../img/o.png");
 }
 .o{
-  background:url("/Users/jonathancasson/Documents/WDI_Fundamentals/Projects/project0/img/x.png");
+  background:url("../img/x.png");
   }
 .xWins{
-  background: url("/Users/jonathancasson/Documents/WDI_Fundamentals/Projects/project0/img/xred.png");
+  background: url("../img/xred.png");
 }
 .oWins{
-  background: url("/Users/jonathancasson/Documents/WDI_Fundamentals/Projects/project0/img/oblue.png");
+  background: url("../img/oblue.png");
 }
