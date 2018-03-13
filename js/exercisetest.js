@@ -127,6 +127,10 @@ const winCheck = function(){
 
   }
 
+  else if(moves.indexOf('7') > -1 && moves.indexOf('8') > -1 && moves.indexOf('9') > -1){
+    win();
+
+  }
 
   else if(moves.indexOf('1') > -1 && moves.indexOf('4') > -1 && moves.indexOf('7') > -1){
     win();

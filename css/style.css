@@ -18,7 +18,7 @@ body {
     width:843px;
     cursor: move;
     z-index: 10;
-    background: url("../img/moveable div bg.jpg");
+    background: url("../img/moveableDivBg.jpg");
     color: #fff;
 }
 p{
