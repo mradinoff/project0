@@ -21,6 +21,15 @@ body {
     background: url("../img/moveableDivBg.jpg");
     color: #fff;
 }
+.rowOne{
+  display: flex;
+}
+.rowTwo{
+  display: flex;
+}
+.rowThree{
+  display: flex;
+}
 p{
   position: absolute;
   top: 110px;

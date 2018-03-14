@@ -177,7 +177,7 @@ $(document).ready(function() {
     refresh();
   })
   $('.buttons').on('click', function(){
-    if (whatWasClicked.length===0){
+    if (whatWasClicked.length===0 || xMoves.indexOf(whatWasClicked)> -1 || oMoves.indexOf(whatWasClicked)>-1){
     console.log(`heh`);
     }
     else{
