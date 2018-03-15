@@ -17,3 +17,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Acknowledgments
 Thanks to my teachers Joel, John, Theo, and my mentor Miriam.
+
+![Tic-tac-toe screenshot](img/screenshot.png)
