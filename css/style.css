@@ -127,7 +127,7 @@ h3{
   #mydiv{
     top: 0px;
     left: -20px;
-    width: 30px;
+    width: 30%;
     height: 1020px;
   }
   #mydivheader{
@@ -138,7 +138,7 @@ h3{
   #mydiv{
     top: 30px;
     left: -100px;
-    width: 30%;
+    width: 20%;
     height: 60%;
   }
   #mydivheader{
