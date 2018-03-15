@@ -1,38 +1,21 @@
-# Project 0
+# Mac's Tic-Tac-Toe (Project 0)
 
-## Subheading
-some **bold** text.
+## Description
+A simple but stylised version of the classic local multiplayer game of tic-tac-toe. Made for Project 0, Week 3 of the General Assembly web development immersive course.
 
-some _italic_ text.
+## Built With
+HTML, CSS, and JQuery.
 
-## Lists
-* List item
-  * sub-list item
+## Known Bugs
+* Scaling is not fully optimised
 
-### Marx Brothers
-  1. Groucho
-  1. Harpo
-  1. Chico
+## Authors
+Mac Radinoff.
 
-![Bill Murray](https://fillmurray.com/50/70)
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
-[Twitter](http://twitter.com)
+## Acknowledgments
+Thanks to my teachers Joel, John, Theo, and my mentor Miriam.
 
-To quote someone famous:
->Famous inspirational quote
-
-`
-some code here
-`
-
-## Github Flavoured Markdown
-
-### Function Expression example
-```javascript
-const sayHello = function(){
-  console.log("Say Hello");
-}
-```
-@aparkinbotswana
-
-~~strike~~
+![Mac's Tic-tac-toe](/Users/jonathancasson/documents/WDI_Fundamentals/Projects/project0/img/Screen Shot 2018-03-15 at 3.20.46 pm.png)
