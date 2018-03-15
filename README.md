@@ -17,5 +17,3 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Acknowledgments
 Thanks to my teachers Joel, John, Theo, and my mentor Miriam.
-
-![Mac's Tic-tac-toe](/Users/jonathancasson/documents/WDI_Fundamentals/Projects/project0/img/Screen Shot 2018-03-15 at 3.20.46 pm.png)
