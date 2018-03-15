@@ -3,7 +3,7 @@ body {
     background:url("../img/background-wallpaper-test.jpg") no-repeat fixed center;
     background-size: cover;
 }
-#mydiv {
+#mydiv { /* Draggable div */
     width: 40%;
     height: 97%;
     position: absolute;
@@ -23,7 +23,7 @@ body {
     color: #fff;
 }
 .rowOne{
-  display: flex;
+  display: flex; /* keeps buttons from becoming stacked on scaling down */
 }
 .rowTwo{
   display: flex;
@@ -111,7 +111,7 @@ h3{
   #mydivheader{
     display: none;
 } */
-
+/* The following is for different devices i.e. tablets and phones */
 @media(max-height: 1370px) and (max-width: 1030px)  {
   #mydiv{
     top: 0px;
