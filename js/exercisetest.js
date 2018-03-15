@@ -53,10 +53,21 @@ function reply_click()
 {
     whatWasClicked = event.srcElement.id;
 };
+const playAudio = function (){
+  $('#drawing')[0].play();
+  let duration = 0.3,
+      delay = 0.08;
+}
+const playAudioTwo = function (){
+  $('#drawingTwo')[0].play();
+  let duration = 0.3,
+      delay = 0.08;
+}
 const playerTurn = function(){
   if (turns[turns.length-1] % 2 === 0 ){
     $('p').text("O's turn");
     $('.oscore').text(oscore);
+
   }
   else{
     $('p').text("X's turn");
@@ -68,13 +79,17 @@ const win = function(){
   if(turns[turns.length-1] % 2 === 0){
     oscore = oscore + 1;
     $('.x').addClass('oWins');
+    $('.oscore').hide(10)
     $('.oscore').text(oscore);
+    $('.oscore').show(1000)
     $('p').text("O WINS !!!");
   }
   else{
     xscore = xscore + 1;
     $('.o').addClass('xWins');
+    $('.xscore').hide(10)
     $('.xscore').text(xscore);
+    $('.xscore').show(1000)
     $('p').text("X WINS !!!");
   }
 }
@@ -103,11 +118,17 @@ const turn = function(){
   $(classWhatWasClicked).attr('disabled', true);
   if(turns[turns.length-1] % 2 === 0 ){
     $(classWhatWasClicked).addClass('x');
+    $(classWhatWasClicked).hide();
+    $(classWhatWasClicked).fadeIn(1500);
+    playAudio();
     xMoves = xMoves + whatWasClicked;
   }
   else{
     $(classWhatWasClicked).addClass('o');
     oMoves = oMoves + whatWasClicked
+    $(classWhatWasClicked).hide();
+    $(classWhatWasClicked).fadeIn(1500);
+    playAudioTwo();
   }
 }
 const winCheck = function(){
@@ -178,14 +199,12 @@ $(document).ready(function() {
   })
   $('.buttons').on('click', function(){
     if (whatWasClicked.length===0 || xMoves.indexOf(whatWasClicked)> -1 || oMoves.indexOf(whatWasClicked)>-1){
-    console.log(`heh`);
     }
     else{
       playerTurn();
       turn();
       winCheck();
       if (moves.length > 0 && turns.length < 8){
-        console.log(`why?`)
         turns.pop();
         whatWasClicked = "";
       }
