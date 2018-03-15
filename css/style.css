@@ -115,7 +115,7 @@ h3{
 @media(max-height: 1370px) and (max-width: 1030px)  {
   #mydiv{
     top: 0px;
-    left: 70px;
+    left: 0px;
     width: vw;
     height: vh;
   }
@@ -127,8 +127,8 @@ h3{
   #mydiv{
     top: 0px;
     left: -20px;
-    width: vw;
-    height: vh;
+    width: 770px;
+    height: 1020px;
   }
   #mydivheader{
     display: none;
@@ -138,8 +138,8 @@ h3{
   #mydiv{
     top: 0px;
     left: -100px;
-    width: vw;
-    height: vh;
+    width: 400px;
+    height: 800px;
   }
   #mydivheader{
     display: none;
