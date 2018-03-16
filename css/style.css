@@ -21,6 +21,7 @@ body {
     z-index: 10;
     background: url("../img/moveableDivBg.jpg");
     color: #fff;
+    opacity: 0.8;
 }
 .rowOne{
   display: flex; /* keeps buttons from becoming stacked on scaling down */
